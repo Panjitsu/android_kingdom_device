@@ -1,0 +1,14 @@
+allow untrusted_app_25 device:dir { open };
+dontaudit untrusted_app_25 hal_memtrack_hwservice:hwservice_manager find;
+allow untrusted_app_25 hal_memtrack_default:binder call;
+dontaudit untrusted_app_25 proc:file { getattr open read };
+dontaudit untrusted_app_25 proc_stat:file { getattr open read };
+allow untrusted_app_25 proc_zoneinfo:file { getattr open read };
+allow untrusted_app_25 proc_version:file { getattr open read };
+allow untrusted_app_25 sysfs:file { getattr open read };
+allow untrusted_app_25 sysfs_lowmemorykiller:dir { search };
+allow untrusted_app_25 sysfs_lowmemorykiller:file { getattr open read };
+allow untrusted_app_25 sysfs_vibrator:file { getattr open read };
+allow untrusted_app_25 sysfs_usb_supply:dir { search };
+dontaudit untrusted_app_25 kgsl_debugfs:file read;
+dontaudit untrusted_app_25 rootfs:dir { read };

@@ -1,0 +1,79 @@
+#
+# system.prop for K920
+#
+
+# Bluetooth
+bluetooth.hfp.client=1
+vendor.qcom.bluetooth.soc=smd
+ro.bluetooth.hfp.ver=1.7
+ro.qualcomm.bt.hci_transport=smd
+
+ro.bluetooth.dun=false
+ro.bluetooth.sap=false
+ro.qualcomm.bluetooth.ftp=true
+ro.qualcomm.bluetooth.hfp=true
+ro.qualcomm.bluetooth.hsp=true
+ro.qualcomm.bluetooth.map=true
+ro.qualcomm.bluetooth.nap=true
+ro.qualcomm.bluetooth.opp=true
+ro.qualcomm.bluetooth.pbap=true
+
+# Display and Graphics
+ro.sf.lcd_density=480
+ro.opengles.version=196608
+persist.hwc.mdpcomp.enable=true
+debug.hwui.use_buffer_age=false
+
+# Media
+ro.config.vc_call_vol_steps=7
+ro.config.media_vol_steps=25
+ro.config.alarm_vol_steps=25
+ro.config.system_vol_steps=25
+
+# GPS
+persist.gps.qc_nlp_in_use=0
+ro.gps.agps_provider=1
+
+# Memory optimizations
+ro.vendor.qti.am.reschedule_service=true
+ro.vendor.qti.sys.fw.bservice_enable=true
+
+# OTA
+lineage.updater.uri=https://janforman.org/lineageos/?device=kingdom
+
+# Performance
+ro.vendor.extension_library=libqti-perfd-client.so
+
+# RIL & Data
+ro.telephony.call_ring.multiple=0
+ro.use_data_netmgrd=true
+ro.data.large_tcp_window_size=true
+persist.data.netmgrd.qos.enable=true
+persist.data.tcpackprio.enable=true
+
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+persist.radio.add_power_save=1
+persist.radio.apm_sim_not_pwdn=1
+ro.ril.em_redial_vt_failover=true
+ro.ril.ecclist=112,911,999,110,122,119,120,000,08,118,100,101,102,103
+persist.radio.custom_ecc=1
+persist.data.qmi.adb_logmask=0
+
+# Sensors
+ro.qc.sdk.camera.facialproc=true
+ro.qc.sdk.gestures.camera=false
+ro.qti.sdk.sensors.gestures=true
+ro.qti.sensors.bte=true
+ro.qti.sensors.gtap=true
+ro.qti.sensors.vmd=true
+ro.qti.sensors.pick_up=false
+ro.qti.sensors.tilt_detector=true
+ro.qti.sensors.scrn_ortn=true
+
+# Widewine
+drm.service.enabled=true
+ro.com.widevine.cachesize=16777216
+
+# Wifi
+wifi.interface=wlan0
+wifi.direct.interface=p2p0

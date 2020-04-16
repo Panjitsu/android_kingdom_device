@@ -1,0 +1,55 @@
+# Sensors
+/persist/sns.reg                                u:object_r:sensors_persist_file:s0
+
+# NXP Amplifier
+/dev/tfa9890                                    u:object_r:audio_device:s0
+
+# Touch Panel
+/sys/devices/virtual/touch/tp_dev/key_enable    u:object_r:touchpanel_sysfs:s0
+/sys/devices/gpio_keys\.[0-9]+/disabled_keys         u:object_r:touchpanel_sysfs:s0
+/sys/devices/virtual/touch/tp_dev/key_reverse   u:object_r:touchpanel_sysfs:s0
+/sys/devices/virtual/touch/tp_dev/gesture_on    u:object_r:touchpanel_sysfs:s0
+
+/sys/class/touchscreen/device/gesture u:object_r:touchpanel_sysfs:s0
+
+# HALS
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.kingdom     u:object_r:hal_light_default_exec:s0
+
+# Bluetooth
+/(vendor|system/vendor)/bin/init\.program_bdaddr\.sh               u:object_r:bluetooth_loader_exec:s0
+/(vendor|system/vendor)/bin/awk                                    u:object_r:awktool_exec:s0
+
+# Lights
+/sys/devices/mdp\.0/qcom,mdss_fb_primary\.169/leds/lcd-backlight(/.*)?   u:object_r:sysfs_leds:s0
+/sys/devices/leds-qpnp-shenqi-k9-24/leds/led:rgb_red(/.*)?               u:object_r:sysfs_leds:s0
+/sys/devices/leds-qpnp-shenqi-k9-24/leds/led:rgb_green(/.*)?             u:object_r:sysfs_leds:s0
+/sys/devices/leds-qpnp-shenqi-k9-24/leds/led:rgb_blue(/.*)?              u:object_r:sysfs_leds:s0
+/sys/devices/leds-qpnp-shenqi-k9-24/leds/rgb(/.*)?                       u:object_r:sysfs_leds:s0
+/sys/devices/leds-qpnp-shenqi-k9-27/leds/button-backlight(/.*)?          u:object_r:sysfs_leds:s0
+/sys/devices/leds-qpnp-shenqi-k9-27/leds/button-backlight2(/.*)?         u:object_r:sysfs_leds:s0
+
+/sys/class/leds/lcd-backlight/brightness u:object_r:sysfs_leds:s0
+
+# NFC
+/dev/pn547                                           u:object_r:nfc_device:s0
+/dev/sec-nfc                                         u:object_r:nfc_device:s0
+
+
+# FRP
+/dev/block/platform/msm_sdcc\.[0-9]+/by-name/frp               u:object_r:frp_block_device:s0
+
+# healthd
+/sys/devices/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[0-9]+/power_supply(/.*)?          u:object_r:sysfs_batteryinfo:s0
+/sys/devices/qpnp-bms-[0-9]+/power_supply(/.*)?                        u:object_r:sysfs_batteryinfo:s0
+/sys/devices/qpnp-charger-[0-9]+/power_supply(/.*)?                    u:object_r:sysfs_batteryinfo:s0
+
+#net
+/sys/devices/virtual/net(/.*)?                          u:object_r:sysfs_net:s0
+
+ # Thermanager
+/(vendor|system/vendor)/bin/thermanager		u:object_r:thermanager_exec:s0
+
+# /data/dpm(/.*)?                                 u:object_r:dpmd_data_file:s0
+
+# sysfs - block/storage
+/sys/devices/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/bkops_en    u:object_r:sysfs_io_sched_tuneable:s0

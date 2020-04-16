@@ -1,0 +1,10 @@
+allow vendor_init sysfs:dir relabelfrom;
+allow vendor_init sysfs:file { read relabelfrom };
+allow vendor_init wifi_data_file:dir { search setattr };
+# allow vendor_init dpmd_data_file:dir { search setattr };
+allow vendor_init media_rw_data_file:file getattr;
+allow vendor_init proc:file write;
+# allow vendor_init sysfs_io_sched_tuneable:dir relabelto;
+# allow vendor_init sysfs_io_sched_tuneable:file relabelto;
+allow vendor_init wpa_socket:dir setattr;
+allow vendor_init rootfs:dir { add_name write };
